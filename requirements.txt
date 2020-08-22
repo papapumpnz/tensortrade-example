@@ -1,0 +1,16 @@
+sqlalchemy
+tensortrade
+tensorflow
+tensorforce
+stable-baselines
+ccxt
+ta
+stochastic
+numpy
+pandas
+gym
+pyyaml
+ipython
+plotly
+sympy
+ipywidgets
