@@ -105,3 +105,8 @@ venv.bak/
 
 # Pycharm
 .idea/
+
+# App specific
+/agents
+/charts
+/training_logs
