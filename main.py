@@ -17,13 +17,13 @@ def run():
     #     print(dm.renderer_stream.next())
 
     # setup exchange. Needs raw data
-    binance_exchange = BinanceExchange(data=dm.data).exchange
+    binance_exchange = BinanceExchange(data=dm.data)
 
     # setup portfolio
-    binance_portfolio = BinancePortfolio(exchange=binance_exchange).portfolio
+    binance_portfolio = BinancePortfolio(exchange=binance_exchange)
 
     # setup environment. Needs data feed stream
-    env = Environment(portfolio=binance_portfolio, data_stream=dm.stream, renderer_stream=dm.renderer_stream).environment
+    env = Environment(portfolio=binance_portfolio, data_stream=dm.stream, renderer_stream=dm.renderer_stream)
 
     # for _ in range(10):
     #     print(env.observer.feed.next())
@@ -32,7 +32,7 @@ def run():
     agent = Agent(environment=env)
 
     # train agent
-    print(agent.train(steps=200, episodes=2, render_interval=10))
+    print(agent.train(steps=100, episodes=4, render_interval=10))
 
 
     # show plots of performance

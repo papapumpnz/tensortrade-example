@@ -11,20 +11,11 @@ For example, CCXTExchange is a live exchange, which is capable of returning pric
 hundreds of live cryptocurrency exchanges, such as Binance and Coinbase.
 """
 
-class BinanceExchange():
+def BinanceExchange(data):
 
-    def __init__(self, data):
-        self._data = data
-        self._exchange = self._setup()
+    exchange = Exchange("binance", service=execute_order)(
+        Stream.source(list(data['close']), dtype="float").rename("USD-BTC")
+    )
 
-    def _setup(self):
+    return exchange
 
-        exchange = Exchange("binance", service=execute_order)(
-            Stream.source(list(self._data['close']), dtype="float").rename("USD-BTC")
-        )
-
-        return exchange
-
-    @property
-    def exchange(self):
-        return self._exchange

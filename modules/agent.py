@@ -1,9 +1,9 @@
-from tensortrade.agents import DQNAgent
+from tensortrade.agents import DQNAgent, A2CAgent
 
 class Agent():
 
     def __init__(self, environment):
-        self._agent = DQNAgent(environment)
+        self._agent = A2CAgent(environment)
 
 
     def train(self, steps, episodes, save_path='agents/', render_interval=10):
