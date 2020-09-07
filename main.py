@@ -3,12 +3,18 @@ from modules.exchange import BinanceExchange
 from modules.portfolio import BinancePortfolio
 from modules.environment import Environment
 from modules.agent import Agent
+from modules.tensorflow_fix import memory_fix, memory_hard_fix
+
 import matplotlib.pyplot as plt
 
 # https://www.tensortrade.org/en/latest/
 
 
 def run():
+
+    # uncomment these if you want
+    #memory_fix()
+    #memory_hard_fix()
 
     # setup data feed
     dm = DataManager()
